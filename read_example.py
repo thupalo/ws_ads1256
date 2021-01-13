@@ -17,26 +17,25 @@ ads1256.start("1","2d5")
 
 # Calculates and displays how much time has elapsed from the start of the program 
 # to the end of executing the initialization function
-print str(int((time.time()-d0)*1000))+"mS in initializing ADC\n"
-
+print( str(int((time.time()-d0)*1000))+"mS in initializing ADC\n" )
 
 # Performs 5 readings of all ADC channels.
-print "\nReading all channels with the function ads1256.read_all_channels():"
+print( "\nReading all channels with the function ads1256.read_all_channels():" )
 for i in range(1):
     d0 =time.time()
     valorTodosCanais = ads1256.read_all_channels()
     for x in valorTodosCanais:
-        print x
-    print "\n" + str(int((time.time()-d0)*1000))+"mS elapsed in reading 8 channels (" + str(int((time.time()-d0)*1000)/8) + " mS in each one)\n" 
+        print( x )
+    print( "\n" + str(int((time.time()-d0)*1000))+"mS elapsed in reading 8 channels (" + str(int((time.time()-d0)*1000)/8) + " mS in each one)\n" )
 
 
 # Performs the reading of ADC channel 0
-print "\nReading only the channel 0 with ads1256.read_channel():"
+print( "\nReading only the channel 0 with ads1256.read_channel():" )
 d0 =time.time()
 valorCanal = ads1256.read_channel(0)
-print valorCanal
+print( valorCanal )
         
-print "\n" + str(int((time.time()-d0)*1000))+"mS in reading only channel 0\n"
+print( "\n" + str(int((time.time()-d0)*1000))+"mS in reading only channel 0\n" )
  
 
 ads1256.stop()

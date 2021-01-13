@@ -22,7 +22,7 @@ for i in range(0, 8):
 
 for i in range(0, 8):     
     # Print all the absolute values
-    print AllChannelValues[i]              
+    print( AllChannelValues[i] )             
 
 
 # Print a new line
@@ -31,7 +31,7 @@ print ("\n");
 
 for i in range(0, 8):     
     # Print all the Volts values converted from the absolute values
-    print AllChannelValuesVolts[i]         
+    print( AllChannelValuesVolts[i] )        
 
 # Stop the use of the ADC
 ads1256.stop() 							   

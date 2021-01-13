@@ -17,18 +17,26 @@ static PyMethodDef module_methods[] = {
     {"read_channel", adc_read_channel, METH_VARARGS, {"lê o canal especificado do ads1256"}},
     {"read_all_channels", adc_read_all_channels, METH_VARARGS, {"lê todos os 8 canais do ads1256"}},
     {"start", adc_start, METH_VARARGS, {"inicia e configura o ads1256"}},
-    {"stop", adc_stop, 0, {"termina e fecha o ads1256"}},
+    {"stop", adc_stop, METH_VARARGS, {"termina e fecha o ads1256"}},
     {NULL, NULL, 0, NULL}
 };
 
-/* Initialize the module */
-PyMODINIT_FUNC initads1256(void)
+static struct PyModuleDef ads1256 =
 {
-    PyObject *m = Py_InitModule3("ads1256", module_methods, module_docstring);
-    if (m == NULL)
-        return;
+    PyModuleDef_HEAD_INIT,
+    "ads1256",          /* name of module */
+    module_docstring,   /* module documentation, may be NULL */
+    -1,                 /* size of per-interpreter state of the module, or -1 if the module keeps state in global variables. */
+    module_methods
+};
 
+
+/* Initialize the module */
+PyMODINIT_FUNC PyInit_ads1256(void)
+{
+    return PyModule_Create(&ads1256);
 }
+
 static PyObject *adc_start(PyObject *self, PyObject *args)
 {
 
@@ -69,13 +77,11 @@ static PyObject *adc_read_channel(PyObject *self, PyObject *args)
     return Py_BuildValue("l",retorno);
 }
 
-
 static PyObject *adc_read_all_channels(PyObject *self, PyObject *args)
 {
     PyObject *yerr_obj;
     long int v[8];
                                          
-
     /* execute the code */ 
     readChannels(v);
 

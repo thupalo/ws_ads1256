@@ -5,7 +5,7 @@ from datetime import datetime   # import the datetime lib
 #Python example to use the ADS1256 as a Voltage Data Logger.  
 
 gain = 1			 # ADC's Gain parameter. Possible values:  1,  2,  4,  8,  16,  32,  64
-sps = "25"			 # ADC's SPS parameter. Possible values:   2d5,  5,  10,  15,  25,  30,  50,  60,  100,  500,  1000,  2000,  3750,  7500,  15000,  30000
+sps = "2d5"			 # ADC's SPS parameter. Possible values:   2d5,  5,  10,  15,  25,  30,  50,  60,  100,  500,  1000,  2000,  3750,  7500,  15000,  30000
 
 chv = [0,0,0,0,0,0,0,0]       # Create the first list. It will receive ADC's absolute values
 ch     = [0,0,0,0,0,0,0,0]			# Create the second list. It will received absolute values converted to Volts
@@ -50,7 +50,8 @@ with open(filename,"a") as file:           # Open the file into Append mode (ent
                 for x in range(0, 8):
                     chv[x] = (((ch[x] * 100) /167.0)/int(gain))/1000000.0   # Fill the second list  with the voltage values
 
-                print str(chv[0]) + " " + str(chv[1]) + " " + str(chv[2]) + " " + str(chv[3]) + " " + str(chv[4]) + " " + str(chv[5]) + " " + str(chv[6])+ " " + str(chv[7])
+                print( str(chv[0]) + " " + str(chv[1]) + " " + str(chv[2]) + " " + str(chv[3]) + 
+                       " " + str(chv[4]) + " " + str(chv[5]) + " " + str(chv[6])+ " " + str(chv[7]) )
 
                 # Registra efetivamente no arquivo .CSV  (no padrao americano)
                 file.write(str(row_id) 
