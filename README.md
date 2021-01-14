@@ -31,9 +31,9 @@ After this, run the following commands on a Raspberry Pi or other Debian-based O
 
 Please run one of these to test
 
-    python read_example.py
-    python read_volts_example.py
-    python datalogger_example.py 
+    sudo python3 read_example.py
+    sudo python3 read_volts_example.py
+    sudo python3 datalogger_example.py 
  
 
 
@@ -114,7 +114,7 @@ The 2d5 SPS equals to 2.5 (it's a nomenclature issue from the original C code. I
     It keeps reading all the ads1256 channels in absolute and voltage values and saving to a CSV file until a break from the user
     To test it, run the following:
 
-    python datalogger_example.py
+    sudo python3 datalogger_example.py
 
 
 
