@@ -42,7 +42,7 @@ Please run one of these to test
     import ads1256                                   # import this lib
     ads1256.start(str(1),"25")                       # initialize the ADC using 25 SPS with GAIN of 1x
     ChannelValue = ads1256.read_channel(0)           # read the value from ADC channel 0 
-    print ChannelValue                               # print the value from the variable
+    print(ChannelValue)                              # print the value from the variable
     ads1256.stop()                                   # stop the use of the ADC
 
 
@@ -53,7 +53,7 @@ Please run one of these to test
     ads1256.start(str(1),"25")                       # initialize the ADC using 25 SPS with GAIN of 1x
     AllChannelValues = ads1256.read_all_channels()   # create a list of 8 elements: one for each ADC channel 
     for x in AllChannelValues:                       # for each element in the list... 
-        print x                                      # ...print it
+        print(x)                                     # ...print it
     ads1256.stop()                                   # stop the use of the ADC
  
 
@@ -76,12 +76,12 @@ Please run one of these to test
         AllChannelValuesVolts[i] = (((AllChannelValues[i] * 100) /167.0)/int(gain))/1000000.0   # Fill the second list  with the voltage values
 
     for i in range(0, 8):                      
-        print AllChannelValues[i]              # Print all the absolute values
+        print(AllChannelValues[i])             # Print all the absolute values
 
-    print ("\n");                              # Print a new line
+    print("\n");                               # Print a new line
 
     for i in range(0, 8):                      
-        print AllChannelValuesVolts[i]         # Print all the Volts values converted from the absolute values
+        print(AllChannelValuesVolts[i])        # Print all the Volts values converted from the absolute values
 
     ads1256.stop()                             # Stop the use of the ADC
 
