@@ -1,4 +1,4 @@
-# py-ads1256
+# ws-ads1256
 Python Library with wrapers to read 8 channels from the Texas Instruments ADS1256 ADC.  
 It does make use of the original WaveShare's C library for the [High-Precision_AD/DA_Board 24 Bits] (http://www.waveshare.com/wiki/High-Precision_AD/DA_Board) 
 
@@ -7,9 +7,9 @@ It does make use of the original WaveShare's C library for the [High-Precision_A
 To install the library, first install it's principal dependency: the SoC bcm2835 library:
 
     sudo apt-get install automake libtool
-    wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.50.tar.gz
-    tar zxvf bcm2835-1.50.tar.gz
-    cd bcm2835-1.50
+    wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.68.tar.gz
+    tar zxvf bcm2835-1.68.tar.gz
+    cd bcm2835-1.68
     autoreconf -vfi
     ./configure
     make
@@ -22,8 +22,8 @@ After this, run the following commands on a Raspberry Pi or other Debian-based O
 
     sudo apt-get install git build-essential python-dev
     cd ~
-    git clone https://github.com/fabiovix/py-ads1256.git
-    cd py-ads1256
+    git clone https://github.com/thupalo/ws_ads1256.git
+    cd ws-ads1256
     sudo python setup.py install
 
 
