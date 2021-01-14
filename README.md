@@ -20,11 +20,11 @@ To install the library, first install it's principal dependency: the SoC bcm2835
 
 After this, run the following commands on a Raspberry Pi or other Debian-based OS system:
 
-    sudo apt-get install git build-essential python-dev
+    sudo apt-get install git build-essential python3-dev
     cd ~
     git clone https://github.com/thupalo/ws_ads1256.git
-    cd ws-ads1256
-    sudo python setup.py install
+    cd ws_ads1256
+    sudo python3 setup.py install
 
 
 ## Testing
