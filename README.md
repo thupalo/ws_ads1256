@@ -1,4 +1,5 @@
-# ws-ads1256
+# ws-ads1256 WaveShare ADS1256 ADC Python3 interface
+
 Python3 Library with wrapers to read 8 channels from the Texas Instruments ADS1256 ADC.  
 It does make use of the original WaveShare's C library for the [High-Precision_AD/DA_Board 24 Bits] (http://www.waveshare.com/wiki/High-Precision_AD/DA_Board) 
 
