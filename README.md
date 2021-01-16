@@ -24,7 +24,8 @@ After this, run the following commands on a Raspberry Pi or other Debian-based O
     cd ~
     git clone https://github.com/thupalo/ws_ads1256.git
     cd ws_ads1256
-    sudo python3 setup.py install
+    sudo make
+    sudo python3.9 setup.py install
 
 
 ## Testing
